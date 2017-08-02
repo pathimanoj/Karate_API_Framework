@@ -1,0 +1,10 @@
+{
+  "recipe": "hello",
+  "state": "new",
+  "files": [
+    {
+      "alias_name": "v4",
+      "url": "https://s3-eu-west-1.amazonaws.com/dp-publish-content-test/OCIGrowth.csv"
+    }
+  ]
+}
