@@ -30,7 +30,10 @@ Feature: An API used to create and query information about import jobs
     And match response.files[0].alias_name == 'v4'
     And match response.files[0].alias_name == createJobJsonRequest.files[0].alias_name
 
-    And match response.links.instance_ids[*] == '#notnull'
+    #And match response.instances[0].instance_ids[*] == '#notnull'
+    And match response.instances[0].id == '#notnull'
+    And match response.instances[0].link == '#notnull'
+    #And match response contains { job_id: '#notnull', recipe: 'hello' , state: 'new'}
     And def job_id = response.job_id
 
     #/*  200 - The job is in a queue */
@@ -45,8 +48,7 @@ Feature: An API used to create and query information about import jobs
     When method put
     Then status 200
 
-    #/*  200 - Return a single instance state */
-    Given path 'instances/'
+
 
 
 
